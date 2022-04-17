@@ -1,0 +1,23 @@
+{
+"mail":{
+	"toaddr": "¿?@icloud.com",
+	"fromaddr": "¿?@gmail.com",
+	"cc": "¿?@gmail.com",
+	"username": "¿?@gmail.com",
+	"password": "¿?"
+	},
+"domohome_wind":{
+	"gpio_pin": 23,
+	"max_warning": 40,
+	"topic":"/home/meteo/wind"
+	},
+"MQTT":{
+	"broker_server_ip":"localhost",
+	"qos":0
+	},
+"db_server_ip":"localhost",
+"db_read_user": "pi_select",
+"db_read_password": "¿?",
+"db_update_user": "pi_insert",
+"db_update_password": "¿?"
+}
