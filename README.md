@@ -18,7 +18,9 @@ Utilizando cualquier protoboard solo se requiere conectar la masa comùn del mic
 <img src="img/anemometro_arduino_wifi_mqtt_bb.png" width="400"  align="center" />
 
 ### Software
-Partimos de que se dispone de un broker MQTT tipo Mosquitto y un Node-RED para procesar la información. El firmware utiliza la libreria para WiFi (ESP8266WiFi.h) y la de MQTT (PubSubClient.h)
+Partimos de que se dispone de un broker MQTT tipo Mosquitto y un Node-RED para procesar la información. El firmware utiliza la libreria para WiFi (ESP8266WiFi.h) y la de MQTT (PubSubClient.h).
+Como se ha utilizado un anemómetro alimentado por 12V que traduce la velocidad del viento a una tensión de salida entre los 0.17V para una velocidad de 1m/s a 5V para 30 m/s. El programa del microcontrolador hará este cálculo de manera que el mensahe MQTT contiene unicamente la velocidad del viento.
+Además el programa, cuando hay viento, enciende el led de la placa WEMOS. Apagándolo cuando es igual a cero.
 
 ```cpp
 #include <ESP8266WiFi.h>
