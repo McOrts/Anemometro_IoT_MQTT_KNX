@@ -2,7 +2,7 @@
 Cada dia es más habitual el uso de sensores de viento integrados con la lógica domótica de los edificios. Para ello es imprescindible considerar el anemómetro como un dispositivo IoT con capacidad de conexión en los diferentes protocolos de comunicación: MQTT, KNX, y medios de transmisión como Ethernet o WiFi.
 
 ## Versión Arduino WemosD1 MQTT por WiFi
-Esta es la versión más simple y versátil. El sensor está montado con resistencia IP67 por lo que puede instalarse en el exterior e incluso utilizarse como dispositivo portátil.
+Esta es la versión más simple y versátil. El sensor está conectado a un microcontrolador ESP8266 montado en una caja estanca con resistencia IP66 por lo que puede instalarse en el exterior. Además podrá utilizarse como dispositivo portátil.
 
 <img src="img/anemometro_arduino_wifi_mqtt.png" width="500"  align="center" />
 
@@ -168,9 +168,11 @@ const int update_time_sensors = 59000;
 ```
 
 ### Back-end
-El procesado y almacenamiento de la información se orquesta desde una aplicación Node-RED. El _flow_ está subscrito al _topic_ de velocidad de viento "/home/meteo/anemometer/wind_speed". A partir del mensaje con la velocidad de viento en m/s, se hace el cálculo a km/h para almacenar el dato en una BBDD MySQL, presentar la información en un _dashboard_ y validar el umbral de alerta para enviar un mensaje por el servicio IFTTT.
+El procesado y almacenamiento de la información se orquesta desde una aplicación Node-RED. El _flow_ está subscrito al _topic_ de velocidad de viento "/home/meteo/anemometer/wind_speed". A partir del mensaje con la velocidad de viento en m/s, se hace el cálculo a km/h para almacenar el dato en una BBDD MySQL, presentar la información en un _dashboard_ y validar el umbral de alerta para enviar un mensaje por el servicio IFTTT. El código fuente 
 
 <img src="img/node-red_flow.png" width="500"  align="center" />
+
+
 
 ## Versión RaspberryPi MQTT por Ethernet
 También se puede implementar un sensor de viento sobre una _single board computer_ como la Raspberry Pi y utilizando señal de pulsos como la que tiene anemómetros como el [WH-SP-WS01](https://es.aliexpress.com/item/1005001484228267.html)
