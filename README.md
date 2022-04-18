@@ -170,7 +170,7 @@ const int update_time_sensors = 59000;
 ### Back-end
 El procesado y almacenamiento de la información se orquesta desde una aplicación Node-RED. El _flow_ está subscrito al _topic_ de velocidad de viento "/home/meteo/anemometer/wind_speed". A partir del mensaje con la velocidad de viento en m/s, se hace el cálculo a km/h para almacenar el dato en una BBDD MySQL, presentar la información en un _dashboard_ y validar el umbral de alerta para enviar un mensaje por el servicio IFTTT. El código .json del flujo está en: https://github.com/McOrts/Anemometro_IoT_MQTT_KNX/blob/main/code/node-red_flow.json
 
-<img src="img/node-red_flow.png" width="500"  align="center" />
+<img src="img/node-red_flow.png" align="center" />
 
 
 ## Versión RaspberryPi MQTT por Ethernet
@@ -310,7 +310,7 @@ while True:
 Otra opción más compleja es la integrar el sensor de viento en un bus KNX. Para asegurar la compatibilidad he usado un Arduino Uno original. El modo de lectura del anemómetro es idéntico al utilizado en el WEMOS D1. Pero la transmisión del mensaje se hace a través de comandos enviados por el puerto serie del Arduino.
 A su vez necesitamos traducir estas señales a modo TTL y formato RS323 que es la manera en la que podremos insertar el mensaje en el bus KNX utilizando el gateway SKX-Open de Zennio. 
 
-<img src="img/anemometro_arduino_knx_bb.png" width="500"  align="center" />
+<img src="img/anemometro_arduino_knx_bb.png" align="center" />
 
 ### Hardware
 Para este montaje, además del anemómetro de referencia utilizado [SKU:SEN0170](https://www.dfrobot.com/search-SEN0170.html), y un Arduino Uno. Para poder llevar el mensaje al bus NKX necesitamos dos componentes:
@@ -432,12 +432,14 @@ void loop() {
 
 De la parte de KNX, necesitaremos configurar el SKX-Open. En primer lugar, parametrizando el gateway con objetos de 1 bit que mmanejan las tramas que genera y escucha Arduino. En esta configuración las tramas se traducen a sus valores ASCII hexadecimales.
 
-<img src="img/ETS5_SKX_Parameters.png" width="500"  align="center" />
+<img src="img/ETS5_SKX_Parameters.png"  align="center" />
 
 Finalmente queda construir los grupos y asignar los objetos anteriores en función de lo que queramos hacer con los eventos. En este caso cerrar persianas y desenclavar sis objetos de alarma.
 
-<img src="img/ETS5_SKX_Grupos.png" width="500"  align="center" />
+<img src="img/ETS5_SKX_Grupos.png"  align="center" />
 
 ## Agradecimientos
-Joaquin González Torres. Compañero Técnico de Telecomunicaciones
-Joan Carbonell. Profesor del IES Politecnic
+- **Joaquin González Torres**. Compañero Técnico de Telecomunicaciones
+- **Joan Carbonell**. Profesor del IES Politecnic
+
+<img src="img/anemometer_deployed.GIF"  align="center" />
