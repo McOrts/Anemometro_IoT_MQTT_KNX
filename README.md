@@ -1,7 +1,7 @@
 # Conectividad IoT para anemómetros
-Cada dia es más habitual el uso de sensores de viento integrados con la lógica domótica de los edificios. Para ello es imprescindible considerar el anemómetro como un dispositivo IoT con capacidad de conexión en los diferentes protocolos de comunicación: MQTT, KNX, y medios de transmisión como Ethernet o WiFi.
+Cada día es más habitual el uso de sensores de viento integrados con la lógica domótica de los edificios. Para ello es imprescindible considerar el anemómetro como un dispositivo IoT con capacidad de conexión en los diferentes protocolos de comunicación: MQTT, KNX, y medios de transmisión como Ethernet o WiFi.
 
-## Versión Arduino WemosD1 MQTT por WiFi
+## Versión Arduino WEMOS-D1 MQTT por WiFi
 Esta es la versión más simple y versátil. El sensor está conectado a un microcontrolador ESP8266 montado en una caja estanca con resistencia IP66 por lo que puede instalarse en el exterior. Además podrá utilizarse como dispositivo portátil.
 
 <img src="img/anemometro_arduino_wifi_mqtt.png" width="500"  align="center" />
@@ -18,9 +18,9 @@ Utilizando cualquier protoboard solo se requiere conectar la masa comùn del mic
 <img src="img/anemometro_arduino_wifi_mqtt_bb.png" width="400"  align="center" />
 
 ### Software
-Partimos de que se dispone de un broker MQTT tipo Mosquitto y un Node-RED para procesar la información. El firmware utiliza la libreria para WiFi (ESP8266WiFi.h) y la de MQTT (PubSubClient.h).
-Como se ha utilizado un anemómetro alimentado por 12V que traduce la velocidad del viento a una tensión de salida entre los 0.17V para una velocidad de 1m/s a 5V para 30 m/s. El programa del microcontrolador hará este cálculo de manera que el mensahe MQTT contiene unicamente la velocidad del viento.
-Además el programa, cuando hay viento, enciende el led de la placa WEMOS. Apagándolo cuando es igual a cero.
+Partimos de que se dispone de un broker MQTT tipo Mosquitto y un Node-RED para procesar la información. El firmware utiliza la librería para WiFi (ESP8266WiFi.h) y la de MQTT (PubSubClient.h).
+Como se ha utilizado un anemómetro alimentado por 12V que traduce la velocidad del viento a una tensión de salida entre los 0.17V para una velocidad de 1m/s a 5V para 30 m/s. El programa del microcontrolador hará este cálculo de manera que el mensaJe MQTT contiene unicamente la velocidad del viento.
+Además el programa, cuando hay viento, enciende el led de la placa WEMOS Apagándolo cuando es igual a cero.
 
 ```cpp
 #include <ESP8266WiFi.h>
@@ -179,7 +179,7 @@ También se puede implementar un sensor de viento sobre una _single board comput
 <img src="img/anemometro_arduino_wifi_mqtt_bb.png" width="500"  align="center" />
 
 ### Sofware
-En este caso he empleado un programa Python que además de enviar el mensaje MQTT, almancena la lectura en una BBDD MySQL y notifica por mail si la velocidad del viento excede de un umbral. Este y otro parámetros están configurados esternamente en el fichero config.json.
+En este caso he empleado un programa Python que además de enviar el mensaje MQTT, almacena la lectura en una BBDD MySQL y notifica por mail si la velocidad del viento excede de un umbral. Este y otro parámetros están configurados externamente en el fichero config.json.
 
 ```python
 #!/usr/bin/python
@@ -306,14 +306,19 @@ while True:
         send_email_wind_speed(speed) 
 ```
 
-## Versión Ardunio UNO KNX
-Otra opción más compleja es la integrar el sensor de viento en un bus KNX. Para asegurar la compatibilidad he usado un Arduino Uno original. El modo de lectura del anemómetro es idéntico al utilziado en el WEMOS D1. Pero la transmisión del mensaje se hace a través de comandos enviados por el puerto serie del Arduino.
-A su vez necesitamos traducir estas señales a modo TTL y formato RS323 que es la manera en la que podremos insertar el mensaje en el bus KNX utilzando el gateway SKX-Open de Zennio. 
+## Versión Arduino UNO KNX
+Otra opción más compleja es la integrar el sensor de viento en un bus KNX. Para asegurar la compatibilidad he usado un Arduino Uno original. El modo de lectura del anemómetro es idéntico al utilizado en el WEMOS D1. Pero la transmisión del mensaje se hace a través de comandos enviados por el puerto serie del Arduino.
+A su vez necesitamos traducir estas señales a modo TTL y formato RS323 que es la manera en la que podremos insertar el mensaje en el bus KNX utilizando el gateway SKX-Open de Zennio. 
 
 <img src="img/anemometro_arduino_knx_bb.png" width="500"  align="center" />
 
+### Hardware
+Para este montaje, además del anemómetro de referencia utilizado [SKU:SEN0170](https://www.dfrobot.com/search-SEN0170.html), y un Arduino Uno. Para poder llevar el mensaje al bus NKX necesitamos dos componentes:
+- [Módulo convertidor de puerto serie MAX3232 RS232 a TTL](https://es.aliexpress.com/item/32982290904.html)
+- [Interface Bus KNX a RS232](https://www.zennio.com/products/interfaces/skx-open)
+
 ### Sofware
-En este caso tenemos un sketch de arduino con una lógica más compleja para construir un diálogo a fin de interacturar con los otros elementos de la red KNX como persianas y botoneras.
+En este caso tenemos un sketch de arduino con una lógica más compleja para construir un diálogo a fin de interactuar con los otros elementos de la red KNX como persianas y botoneras.
 
 ```cpp
 /* Diálogo:
@@ -425,5 +430,14 @@ void loop() {
 }
 ```
 
-De la parte de KNX, necesitaremos configurar el SKX-Open. En primer lugar, parametrizando 
+De la parte de KNX, necesitaremos configurar el SKX-Open. En primer lugar, parametrizando el gateway con objetos de 1 bit que mmanejan las tramas que genera y escucha Arduino. En esta configuración las tramas se traducen a sus valores ASCII hexadecimales.
 
+<img src="img/ETS5_SKX_Parameters.png" width="500"  align="center" />
+
+Finalmente queda construir los grupos y asignar los objetos anteriores en función de lo que queramos hacer con los eventos. En este caso cerrar persianas y desenclavar sis objetos de alarma.
+
+<img src="img/ETS5_SKX_Grupos.png" width="500"  align="center" />
+
+## Agradecimientos
+Joaquin González Torres. Compañero Técnico de Telecomunicaciones
+Joan Carbonell. Profesor del IES Politecnic
