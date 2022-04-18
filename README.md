@@ -310,12 +310,16 @@ while True:
 Otra opción más compleja es la integrar el sensor de viento en un bus KNX. Para asegurar la compatibilidad he usado un Arduino Uno original. El modo de lectura del anemómetro es idéntico al utilizado en el WEMOS D1. Pero la transmisión del mensaje se hace a través de comandos enviados por el puerto serie del Arduino.
 A su vez necesitamos traducir estas señales a modo TTL y formato RS323 que es la manera en la que podremos insertar el mensaje en el bus KNX utilizando el gateway SKX-Open de Zennio. 
 
-<img src="img/anemometro_arduino_knx_bb.png" align="center" />
+<img src="img/anemometro_arduino_knx.png" align="center" />
 
 ### Hardware
 Para este montaje, además del anemómetro de referencia utilizado [SKU:SEN0170](https://www.dfrobot.com/search-SEN0170.html), y un Arduino Uno. Para poder llevar el mensaje al bus NKX necesitamos dos componentes:
 - [Módulo convertidor de puerto serie MAX3232 RS232 a TTL](https://es.aliexpress.com/item/32982290904.html)
 - [Interface Bus KNX a RS232](https://www.zennio.com/products/interfaces/skx-open)
+
+### Montaje
+
+<img src="img/anemometro_arduino_knx_bb.png" align="center" />
 
 ### Sofware
 En este caso tenemos un sketch de arduino con una lógica más compleja para construir un diálogo a fin de interactuar con los otros elementos de la red KNX como persianas y botoneras.
