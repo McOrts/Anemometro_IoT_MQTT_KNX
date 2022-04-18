@@ -176,7 +176,7 @@ El procesado y almacenamiento de la información se orquesta desde una aplicaci�
 ## Versión RaspberryPi MQTT por Ethernet
 También se puede implementar un sensor de viento sobre una _single board computer_ como la Raspberry Pi y utilizando señal de pulsos como la que tiene anemómetros como el [WH-SP-WS01](https://es.aliexpress.com/item/1005001484228267.html)
 
-<img src="img/anemometro_rpi_ethernet_mqtt_bb.png.png" width="500"  align="center" />
+<img src="img/anemometro_rpi_ethernet_mqtt_bb.png" width="500"  align="center" />
 
 ### Sofware
 En este caso he empleado un programa Python que además de enviar el mensaje MQTT, almacena la lectura en una BBDD MySQL y notifica por mail si la velocidad del viento excede de un umbral. Este y otro parámetros están configurados externamente en el fichero config.json.
