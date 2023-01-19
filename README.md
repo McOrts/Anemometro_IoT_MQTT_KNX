@@ -446,7 +446,7 @@ Finalmente queda construir los grupos y asignar los objetos anteriores en funci�
 
 ### Montaje
 
-<img src="img/_bb.png" align="center" />
+<img src="img/Anemometro_IoT_LoRaWAN_bb.png" align="center" />
 
 ### Configuración IDE Arduino
 Lo para poder programar adecuadamente el dispositivo tendremos que configurar el entorno de programación de Arduino con las configuraciones de hardware y librerías de esta placa.

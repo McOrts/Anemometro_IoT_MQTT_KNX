@@ -127,3 +127,28 @@ void loop() {
     }
   }
 }
+
+
+
+  if (millis()-temp1>update_time_sensors) {
+    temp1=millis();
+    
+    // Lectura del puerto analógico y traducción del voltaje a velocidad  
+    WindSpeed = 6 * analogRead(A0) * (5.0 / 1023.0);
+
+    Serial.print("Velocidad del viento: ");
+    Serial.print(WindSpeed);
+    Serial.println(" m/s");
+      
+    // Envía la lectura por MQTT
+    snprintf (msg, 10, "%6i", WindSpeed);
+    Serial.print("[MQTT] Sending data: ");
+    Serial.println(msg);
+    clientMqtt.publish(mqtt_pub_topic_voltage, msg);   
+    delay (1000);
+    if (WindSpeed==0) {
+      digitalWrite(LED_BUILTIN, HIGH);       
+    } else {
+      digitalWrite(LED_BUILTIN, LOW);
+    }
+  }
