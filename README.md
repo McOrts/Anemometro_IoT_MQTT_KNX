@@ -442,7 +442,7 @@ Finalmente queda construir los grupos y asignar los objetos anteriores en funci√
 
 <img src="img/ETS5_SKX_Grupos.png"  align="center" />
 
-## LoRaWAN
+## Versi√≥n de LoRaWAN con TTN
 
 ### Montaje
 
