@@ -475,7 +475,7 @@ La ruta de la información es la siguiente:
 3. Los servidores de TTN decodifican el mensaje y ofrecen diferentes integraciones y _endpoints_ para que nuestras aplicaciones utilicen la información leída por los sensores.
 
 Hay muchas variantes para implementar este enrutamiento. Para este se ha elegido estas configuraciones:
-- Dispositivo es del tipo ABP (Activation-by-personalisation) lo que significa que se identificará en la red con un _DevAddr_ y una _Session key_ preconfigurada. Para ello tenemos que completar el registro de una aplicación y un dispositivo. 
+- Dispositivo es del tipo OTAA (Over-The-Air Activation) un dispositivo final realiza un procedimiento de identificación con una red LoRaWAN, durante el cual se asigna una _DevAddr_ dinámica a un dispositivo final y las claves raíz se utilizan para derivar claves de sesión. Por lo tanto, _DevAddr_ y las claves de sesión cambian a medida que se establece cada nueva sesión.
 - Publicación del paquete de-codificado en una cola MQTT a la que nuestra aplicación está subscrita.
 
 <img src="./img/TTN_p1.jpg" width="200" align="left" />
