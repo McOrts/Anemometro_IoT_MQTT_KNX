@@ -80,7 +80,7 @@ void setup() {
       //In this example we just loop until we're joined, but you could
       //also go and start doing other things and try again later
       Serial.println("JOIN FAILED! Sleeping for 60 seconds");
-      lowPowerSleep(60000);
+      lowPowerSleep(60000); 
     } else {
       Serial.println("JOINED");
       break;
@@ -136,7 +136,7 @@ void loop()
 {
 
   // Wind reading each second
-  wind = 6 * analogRead(ADC) * (5.0 / 1023.0);
+  wind = (6 * analogRead(ADC) * (5.0 / 1023.0) - 33);
   if (wind > 4500) {
     Serial.println("outlier removed");
   } else {
