@@ -164,7 +164,7 @@ void loop() {
       TEMP = valores[2];
       CRC = valores[3];
 
-      wind = WSPE / 100;
+      wind = WSPE / 10;
       temperature = TEMP / 100;
 
       // Cáculos estadísticos
@@ -215,7 +215,7 @@ void loop() {
     snprintf (msg, 10, "%.2f", wind_min);
     clientMqtt.publish(mqtt_pub_topic_windspeedmin, msg);  
     snprintf (msg, 10, "%.2f", temperature);
-    clientMqtt.publish(mqtt_pub_topic_temperature, msg);  
+    clientMqtt.publish(mqtt_pub_topic_windtemperature, msg);  
     clientMqtt.publish(mqtt_sub_topic_ip, IP.c_str());
     clientMqtt.publish(mqtt_sub_topic_cp, "07014");
     delay (1000);
