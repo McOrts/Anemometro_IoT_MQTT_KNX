@@ -1,8 +1,9 @@
-# Conectividad IoT para anemómetros
+# Anemómetro IoT de estado sólido
+
 Cada día es más habitual el uso de sensores de viento integrados con la lógica domótica de los edificios. Para ello es imprescindible considerar el anemómetro como un dispositivo IoT con capacidad de conexión en los diferentes protocolos de comunicación: MQTT, KNX, y LoRaWAN medios de transmisión de modulación inalámbrica como LoRA e WiFi o cableada con Ethernet con TCP/IP.
 
-## Versión Arduino WEMOS-D1 MQTT por WiFi
-Esta es la versión más simple y versátil. El sensor está conectado a un microcontrolador ESP8266 montado en una caja estanca con resistencia IP66 por lo que puede instalarse en el exterior. Además podrá utilizarse como dispositivo portátil.
+## Sin piezas móviles
+Es una versión simple y versátil de anemómetro que puede exponerse en el exterior pudiendo resistir condiciones metereológicas muy adversas. Partimos del sensor de viento modelo SA01 que tiene conectividad serie. El sensor está conectado a un microcontrolador ESP8266 montado en una caja estanca con resistencia IP67 por lo que puede instalarse en el exterior. La alimentación puede hacerse a través de un adaptador de 5V con conectos microUSB o con batería directamente conectada a los pines GRN y 5V convirtiéndolo en un dispositivo portátil.
 
 <img src="img/anemometro_arduino_wifi_mqtt.png" width="500"  align="center" />
 
@@ -10,7 +11,7 @@ Esta es la versión más simple y versátil. El sensor está conectado a un micr
 - [Anemómetro de cazoletas SKU:SEN0170](https://www.dfrobot.com/search-SEN0170.html)
 - [WEMOS D1 Mini Pro 4M](https://es.aliexpress.com/item/32801063577.html)
 - [Adaptador de corriente 12V a micro-USB](https://es.aliexpress.com/item/32973455778.html)
-- [Caja exterior resistencia IP66 tapa transparente](https://es.aliexpress.com/item/4000200361035.html)
+- [Caja exterior resistencia IP67 de 95x65x55mm](https://es.aliexpress.com/item/4000287507400.html)
 
 ### Montaje
 Utilizando cualquier protoboard solo se requiere conectar la masa comùn del microcontrolador y el anemómetro y la senal de tensión de salida del mismo a la entrada analógica del Wemos (ESP8266)
