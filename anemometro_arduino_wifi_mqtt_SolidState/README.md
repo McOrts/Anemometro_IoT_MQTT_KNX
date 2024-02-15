@@ -13,9 +13,11 @@ Es una versión simple y versátil de anemómetro que puede exponerse en el exte
 - [Caja exterior resistencia IP67 de 95x65x55mm](https://es.aliexpress.com/item/4000287507400.html)
 
 ### Montaje
-Utilizando cualquier protoboard solo se requiere conectar la masa comùn del microcontrolador y el anemómetro y la senal de tensión de salida del mismo a la entrada analógica del Wemos (ESP8266)
+Utilizando cualquier protoboard solo se requiere conectar la masa comùn del microcontrolador, patilla G tanto a la alimentación como al anemómetro. De igual manera conectaremos la entrada de alimentación de 5V al anemóetro y a la primera patilla, la de 5V del microcontrolador. Recibiremos las lecturas por el puerto de transmisión/recepción serie en las respectivas patillas RX y RT del mismo lado del controlador.
 
-<img src="img/anemometro_arduino_wifi_mqtt_bb.png" width="400"  align="center" />
+<img src="img/anemometro_arduino_wifi_mqtt_SolidState_bb.png" width="400"  align="center" />
+
+
 
 ### Software
 Partimos de que se dispone de un broker MQTT tipo Mosquitto y un Node-RED para procesar la información. El firmware utiliza la librería para WiFi (ESP8266WiFi.h) y la de MQTT (PubSubClient.h).
