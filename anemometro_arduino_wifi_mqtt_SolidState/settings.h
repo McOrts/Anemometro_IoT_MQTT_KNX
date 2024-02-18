@@ -18,6 +18,5 @@ const char* mqtt_pub_topic_windspeedpeak = "/promenade_espmi/meteo/wind/speed_pe
 const char* mqtt_pub_topic_windspeedmin = "/promenade_espmi/meteo/windspeed_min";
 const char* mqtt_pub_topic_windtemperature = "/promenade_espmi/meteo/wind/temperature";
 
-
 // Other params
 const int update_time_sensors = 59000;

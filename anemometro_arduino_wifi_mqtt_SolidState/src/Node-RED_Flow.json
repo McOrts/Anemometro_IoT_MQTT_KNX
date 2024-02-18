@@ -1,0 +1,782 @@
+[
+    {
+        "id": "3d7b625b7605b60d",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2d508c85865f80ef",
+        "type": "mqtt-broker",
+        "name": "IoT Anywhere",
+        "broker": "mcortshome.mooo.com",
+        "port": "11884",
+        "clientid": "sandbox",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a1f1aa35.890318",
+        "type": "ui_group",
+        "name": "Anemometers",
+        "tab": "754aa237.32a71c",
+        "order": 3,
+        "disp": true,
+        "width": "25",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "754aa237.32a71c",
+        "type": "ui_tab",
+        "name": "Can pastilla",
+        "icon": "router",
+        "order": 8,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "66cfcd1976e3cfc0",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Anemometer testing",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 40,
+                "sy": 40,
+                "gx": 7,
+                "gy": 7,
+                "cx": 1,
+                "cy": 1,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "6d7f94b3e8a5df1f",
+        "type": "ui_spacer",
+        "z": "3d7b625b7605b60d",
+        "name": "spacer",
+        "group": "a1f1aa35.890318",
+        "order": 2,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "34e6c31e90a99b2f",
+        "type": "ui_spacer",
+        "z": "3d7b625b7605b60d",
+        "name": "spacer",
+        "group": "a1f1aa35.890318",
+        "order": 3,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "49f788e060e2fedd",
+        "type": "postgreSQLConfig",
+        "name": "sensograma-dev",
+        "host": "192.168.1.46",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "sensograma-dev",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": "10",
+        "maxFieldType": "num",
+        "idle": "1000",
+        "idleFieldType": "num",
+        "connectionTimeout": "10000",
+        "connectionTimeoutFieldType": "num",
+        "user": "postgres",
+        "userFieldType": "str",
+        "password": "",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "878af0529fe9c3b8",
+        "type": "mqtt in",
+        "z": "3d7b625b7605b60d",
+        "name": "",
+        "topic": "/promenade_espmi/meteo/wind/speed_peak",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "2d508c85865f80ef",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 100,
+        "wires": [
+            [
+                "dd20f21c1452c572"
+            ]
+        ]
+    },
+    {
+        "id": "d38aaa617b6a8708",
+        "type": "mqtt in",
+        "z": "3d7b625b7605b60d",
+        "name": "",
+        "topic": "/canpastilla/meteo/wind/speed",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "2d508c85865f80ef",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "821bf59eb89c2fbe",
+                "ddf0114261721a4b"
+            ]
+        ]
+    },
+    {
+        "id": "3537b8bdeda15d56",
+        "type": "mqtt in",
+        "z": "3d7b625b7605b60d",
+        "name": "",
+        "topic": "/sensors_raw/weather/9162153",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "2d508c85865f80ef",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 320,
+        "wires": [
+            [
+                "9f397b0c99b7d26f",
+                "55cf53bac950c95e"
+            ]
+        ]
+    },
+    {
+        "id": "311c965.e885d6a",
+        "type": "change",
+        "z": "3d7b625b7605b60d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Solid State",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 240,
+        "wires": [
+            [
+                "8dfb0c82.d3431",
+                "90092c38f4eac9dc"
+            ]
+        ]
+    },
+    {
+        "id": "8dfb0c82.d3431",
+        "type": "ui_chart",
+        "z": "3d7b625b7605b60d",
+        "name": "",
+        "group": "a1f1aa35.890318",
+        "order": 6,
+        "width": 17,
+        "height": 5,
+        "label": "Temperature ºC",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "5",
+        "ymax": "40",
+        "removeOlder": "7",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#3a07f2",
+            "#ff7f0e",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 820,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9b160c77.f7586",
+        "type": "ui_chart",
+        "z": "3d7b625b7605b60d",
+        "name": "",
+        "group": "a1f1aa35.890318",
+        "order": 1,
+        "width": 21,
+        "height": 10,
+        "label": "Wind speed peak km/h",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH",
+        "interpolate": "step",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "90",
+        "removeOlder": "7",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#3a07f2",
+            "#ff7f0e",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 840,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "128c6483.b94c4b",
+        "type": "ui_gauge",
+        "z": "3d7b625b7605b60d",
+        "name": "",
+        "group": "a1f1aa35.890318",
+        "order": 4,
+        "width": 4,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Solid State",
+        "label": "km/h",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 810,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "dd20f21c1452c572",
+        "type": "change",
+        "z": "3d7b625b7605b60d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Solid State",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 100,
+        "wires": [
+            [
+                "9b160c77.f7586",
+                "fbfd339a5e8d964e",
+                "128c6483.b94c4b"
+            ]
+        ]
+    },
+    {
+        "id": "ddf0114261721a4b",
+        "type": "change",
+        "z": "3d7b625b7605b60d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Moving",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 160,
+        "wires": [
+            [
+                "9b160c77.f7586",
+                "226df85feebbe328"
+            ]
+        ]
+    },
+    {
+        "id": "821bf59eb89c2fbe",
+        "type": "ui_gauge",
+        "z": "3d7b625b7605b60d",
+        "name": "",
+        "group": "a1f1aa35.890318",
+        "order": 5,
+        "width": 4,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Moving",
+        "label": "km/h",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 800,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "9f397b0c99b7d26f",
+        "type": "change",
+        "z": "3d7b625b7605b60d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Weather Station",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.temperature",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 320,
+        "wires": [
+            [
+                "8dfb0c82.d3431",
+                "4f795512c15820c0"
+            ]
+        ]
+    },
+    {
+        "id": "4b458e5adc5c6497",
+        "type": "mqtt in",
+        "z": "3d7b625b7605b60d",
+        "name": "",
+        "topic": "/promenade_espmi/meteo/wind/temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "2d508c85865f80ef",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 240,
+        "wires": [
+            [
+                "311c965.e885d6a",
+                "b6da19c829d3e48b"
+            ]
+        ]
+    },
+    {
+        "id": "233be2aee85f8edf",
+        "type": "inject",
+        "z": "3d7b625b7605b60d",
+        "name": "Clean",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "x": 550,
+        "y": 380,
+        "wires": [
+            [
+                "8dfb0c82.d3431"
+            ]
+        ]
+    },
+    {
+        "id": "72999bbb6589c511",
+        "type": "inject",
+        "z": "3d7b625b7605b60d",
+        "name": "Clean",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "x": 550,
+        "y": 40,
+        "wires": [
+            [
+                "9b160c77.f7586"
+            ]
+        ]
+    },
+    {
+        "id": "90092c38f4eac9dc",
+        "type": "ui_widget_thermometer",
+        "z": "3d7b625b7605b60d",
+        "group": "a1f1aa35.890318",
+        "order": 8,
+        "width": 4,
+        "height": 5,
+        "name": "",
+        "title": "Solid State",
+        "numColor": 3,
+        "colorTop": "#f41f1f",
+        "colorMiddle": "#ffc547",
+        "colorBottom": "#3491f4",
+        "unit": "°C",
+        "scale": "small",
+        "minTemp": "-10",
+        "maxTemp": "50",
+        "minTempMoreThanMaxTemp": "1",
+        "numberOfDecimals": "1",
+        "showPercentage": "0",
+        "currentTempFontSize": "1.2",
+        "x": 810,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "4f795512c15820c0",
+        "type": "ui_widget_thermometer",
+        "z": "3d7b625b7605b60d",
+        "group": "a1f1aa35.890318",
+        "order": 7,
+        "width": 4,
+        "height": 5,
+        "name": "",
+        "title": "Weather Sta.",
+        "numColor": 3,
+        "colorTop": "#f41f1f",
+        "colorMiddle": "#ffc547",
+        "colorBottom": "#3491f4",
+        "unit": "°C",
+        "scale": "small",
+        "minTemp": "-10",
+        "maxTemp": "50",
+        "minTempMoreThanMaxTemp": "1",
+        "numberOfDecimals": "1",
+        "showPercentage": "0",
+        "currentTempFontSize": "1.2",
+        "x": 810,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "68abc4d05860c3cd",
+        "type": "postgresql",
+        "z": "3d7b625b7605b60d",
+        "name": "",
+        "query": "INSERT INTO anemometers (speed, type, temperature) VALUES ({{{ msg.payload }}}, '{{{ msg.topic }}}', {{{ msg.temperature }}});\n",
+        "postgreSQLConfig": "49f788e060e2fedd",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 1070,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b6da19c829d3e48b",
+        "type": "change",
+        "z": "3d7b625b7605b60d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temperature-solid",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "55cf53bac950c95e",
+        "type": "change",
+        "z": "3d7b625b7605b60d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temperature-ws",
+                "pt": "flow",
+                "to": "payload.temperature",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fbfd339a5e8d964e",
+        "type": "change",
+        "z": "3d7b625b7605b60d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temperature",
+                "pt": "msg",
+                "to": "temperature-solid",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 20,
+        "wires": [
+            [
+                "68abc4d05860c3cd"
+            ]
+        ]
+    },
+    {
+        "id": "226df85feebbe328",
+        "type": "change",
+        "z": "3d7b625b7605b60d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temperature",
+                "pt": "msg",
+                "to": "temperature-ws",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 60,
+        "wires": [
+            [
+                "68abc4d05860c3cd"
+            ]
+        ]
+    }
+]
