@@ -62,7 +62,6 @@ Con este ejemplo, el dispositivo va a publicar la siguiente información en los 
 
 Adicionalmente se van a publicar
 * Mensaje de estado: "starting" cuando el microcontrolador arranque y "Frame error" en el caso de que la trama del SA01 no se interprete correctamente (mqtt_sub_topic_healthcheck)
-* "/promenade_espmi/meteo/wind/healthcheck";
 * IP de red asignada por el servidor SMTO (mqtt_sub_topic_ip)
 * Cópigo postal grabado en el fichero settings.h (mqtt_sub_topic_cp)
 
