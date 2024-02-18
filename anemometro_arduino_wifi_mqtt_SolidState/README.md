@@ -94,7 +94,7 @@ const char* mqtt_pub_topic_windtemperature = "/promenade_espmi/meteo/wind/temper
 // Other params
 const int update_time_sensors = 59000;
 ```
-<img src="img/Node-RED_Flow.png" width="500"  align="center" />
+<img src="img/Node-RED_Flow.png" align="center" />
 
 ### Back-end
 El procesado y almacenamiento de la información se orquesta desde una aplicación Node-RED. El _flow_ está subscrito a los _topics_ como el de velocidad de viento "/home/meteo/anemometer/wind_speed". Estos valores se grafican usando nodos de 'dashboard ui' y se persisten en una BBDD PostgreSQL.
