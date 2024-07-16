@@ -1,4 +1,4 @@
-# 🌬️Anemómetro IoT de estado sólido 💨
+# 🌬️Anemómetro IoT de estado sólido. Conexión Wifi + MQTT 💨
 
 Cada día es más habitual el uso de sensores de viento integrados con la lógica domótica de los edificios. Para ello es imprescindible considerar el anemómetro como un dispositivo IoT con capacidad de conexión en los diferentes protocolos de comunicación: MQTT, KNX, y LoRaWAN medios de transmisión de modulación inalámbrica como LoRA e WiFi o cableada con Ethernet con TCP/IP.
 
